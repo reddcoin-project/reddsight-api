@@ -26,6 +26,22 @@ Status.prototype.getInfo = function(next) {
   });
 };
 
+Status.prototype.getStakingInfo = function(next) {
+  var that = this;
+  async.series([
+    function (cb) {
+      rpc.getStakingInfo(function(err, info){
+        if (err) return cb(err);
+
+        that.info = info.result;
+        return cb();
+      });
+    },
+  ], function (err) {
+    return next(err);
+  });
+};
+
 Status.prototype.getDifficulty = function(next) {
   var that = this;
   async.series([

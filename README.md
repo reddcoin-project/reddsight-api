@@ -295,6 +295,7 @@ POST response:
 Where "xxx" can be:
 
  * getInfo
+ * getStakingInfo
  * getDifficulty
  * getTxOutSetInfo
  * getBestBlockHash
