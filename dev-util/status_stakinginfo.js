@@ -7,7 +7,7 @@ var config = require('../config/config');
 
 var rpc   = new RpcClient(config.bitcoind);
 
-var block = rpc.getInfo(function(err, block) {
+var block = rpc.getStakingInfo(function(err, block) {
   if (err) {
     console.log("Err:");
     console.log(err);
